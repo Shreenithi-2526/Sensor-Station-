@@ -1,3 +1,3 @@
-My / our project idea is :
+Our project idea is :
 
-- lorem ipsum
+- Sensor station
