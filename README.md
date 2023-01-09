@@ -4,9 +4,10 @@
 
 by: 
 Shreenithi Madhavan, 28639
-_ Mechatronic Systems Engineering _
+_Mechatronic Systems Engineering_
+
 Shreshth Khosla, 28644
- _Electrical and Electronics Engineering_
+_Electrical and Electronics Engineering_
 
 **Faculty of Technology and Bionics**
 
