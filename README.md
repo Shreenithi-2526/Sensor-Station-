@@ -57,7 +57,7 @@ The project is built on a PCB using an ESP32-WROOM-32D chip, DHT22, an external 
 
 Example how to draw a table:
 
-**| Component                   | Model no. |
+**| Component                   | Model no. |**
 
 |FTDI module                  | FT232-AZ    |
 
@@ -97,7 +97,7 @@ Example how to draw a table:
 
 |Battery Connector            | JST PH2P STS |
 
-|Battery 	                  | Li-Ion 3.7V 500mAh |**
+|Battery 	                  | Li-Ion 3.7V 500mAh |
 
 
 ## 2	Literature review
@@ -220,7 +220,7 @@ We started with the schematic design on Autodesk Eagle. The process took a coupl
 
 After successfully eradicating and approving the errors in the schematic, we moved to the next task of building the board view using the schematic layout. While working with the board view, we spaced out the components far enough from each other to avoid congestion and ease the process while soldering. We also had to follow some steps/rules while designing the board view to manufacture the PCB in-house without any issues. We removed the DRC errors from the board view design.
 
-Manufacturing the PCB 
+**Manufacturing the PCB** 
 
 •	**Printing** - We printed the board view design on a laminated plastic A4 sheet with the bottom and top layers mirrored to each other on the ends of the sheet.
 
@@ -245,7 +245,7 @@ After manufacturing the PCB, we realized that the connection from 10uF capacitor
 The placement of the mini-USB port was such that the cable for recharging the battery could not fit in the port. So, we cut the board such that the cable fits inside the port.
 
 
-Software
+**Software**
 
 The Coding part has been attached below
 
