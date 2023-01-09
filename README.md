@@ -53,15 +53,20 @@ Chapter 2 presents…..)
 After finalizing the project idea, the research about the components, sensors, and chips began. The aim while choosing the parts was to focus on the features, cost efficiency, and long-activity. 
 We also focused on buying THT parts, attached to the board using female headers, to repurpose in the future.
 
-The project is built on a PCB using an ESP32-WROOM-32D chip, DHT22, an external temperature & pressure sensor, and an OLED to display the values gathered using the sensor. The idea can be leveled-up by providing the data directly to a Wifi/BlueTooth-enabled device as an application of IoT.    
+The project is built on a PCB using an ESP32-WROOM-32D chip, DHT22, an external temperature & Humidity sensor, and an OLED to display the values gathered using the sensor. The idea can be leveled-up by providing the data directly to a Wifi/BlueTooth-enabled device as an application of IoT.    
 
 Example how to draw a table:
 
 | Component                   | Model no. |
+
 |FTDI module                  | FT232-AZ    |
+
 |OLED panel                   | 0.96", OLED Display, SSD1306  |
+
 |Temperature/Humidity sensor  |	RHT03_DHT-22_AM2302  |
-|Microcontroller	          | ESP32-WROOM-32D   | 
+
+|Microcontroller	          | ESP32-WROOM-32D   |
+ 
 |Pushbutton (x4)              |     |
 |Resistor SMD (x3)10k	      | R1206W  |
 |Resistor SMD 2k	          | R1206W |
