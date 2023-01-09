@@ -111,7 +111,7 @@ We use MCP73831 IC to charge the battery. It is an advanced linear charge manage
 
 
 ## 4	Methodology
-(How was your approach to solve the given problem/task.
+How was your approach to solve the given problem/task.
 This will include descriptions of the HW used as well as the SW.
 This is an example how to include code snippet:
 ```python
@@ -119,7 +119,7 @@ def function():
     #indenting works just fine in the fenced code block
     s = "Python code"
     print s
-```)
+```
 
 **Hardware**
 
@@ -191,6 +191,7 @@ As a next step to our project, we could advance it to an IoT project. The values
 * [5] https://how2electronics.com/design-your-own-esp-board-for-battery-powered-iot-applications/
 * [6] https://www.studiopieters.nl/esp32-program-a-esp32/
 * [7] https://randomnerdtutorials.com/esp32-dht11-dht22-temperature-humidity-sensor-arduino-ide/
+* [8] https://controls.hsrw.org/dokuwiki/doku.php?id=ee:pcbfoametching
 
 ## 9	Appendices
 
