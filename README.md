@@ -121,9 +121,9 @@ def function():
     print s
 ```)
 
-**Hardware
+Hardware
 
-Design **
+Design
 
 
 The design phase started as soon as the part list was ready. 
@@ -143,7 +143,7 @@ Manufacturing the PCB
 •	Developing- The board is placed in a solution of sodium hydroxide
 •	Etching- The PCB is etched using iron chloride to get rid of the unprotected copper.
 •	Cleaning- The PCB is wiped with alcohol to remove unwanted residue.
-•	 Drilling - After checking the connections between the tracks, we drilled holes for the THT components & the VIAS. It is used to connect the top & the bottom layer. The VIAS were punched down using a punching machine.
+•	Drilling - After checking the connections between the tracks, we drilled holes for the THT components & the VIAS. It is used to connect the top & the bottom layer. The VIAS were punched down using a punching machine.
 •	Placing & Soldering - Lastly, after successfully drilling the holes, we moved to the final step of soldering & mounting. We tried to put the SMD paste as precisely as possible to avoid spreading over other pads. We used the Pick and place machine to mount the SMD components of the PCB. The board with the components was put in the oven for 20 minutes to stick the parts firmly. Finally, we soldered the THT components after the previous task. 
 After manufacturing the PCB, we realized that the connection from 10uF capacitor via voltage regulator to the power supply was incomplete. We tackled this problem by soldering a wire to complete the connection.
 
