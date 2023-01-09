@@ -114,11 +114,77 @@ We use MCP73831 IC to charge the battery. It is an advanced linear charge manage
 How was your approach to solve the given problem/task.
 This will include descriptions of the HW used as well as the SW.
 This is an example how to include code snippet:
-```python
-def function():
-    #indenting works just fine in the fenced code block
-    s = "Python code"
-    print s
+```#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+#include <Adafruit_Sensor.h>
+#include <DHT.h>
+
+#define SCREEN_WIDTH 128 // OLED display width, in pixels
+#define SCREEN_HEIGHT 64 // OLED display height, in pixels
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
+
+#define DHTPIN 19     // Digital pin connected to the DHT sensor
+
+// Uncomment the type of sensor in use:
+//#define DHTTYPE    DHT11     // DHT 11
+#define DHTTYPE    DHT22     // DHT 22 (AM2302)
+//#define DHTTYPE    DHT21     // DHT 21 (AM2301)
+DHT dht(DHTPIN, DHTTYPE);
+
+
+void setup() {
+  Serial.begin(115200);
+
+  dht.begin();
+
+  if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
+    Serial.println(F("SSD1306 allocation failed"));
+    for(;;);
+  }
+  delay(2000);
+  display.clearDisplay();
+  display.setTextColor(WHITE);
+}
+
+void loop() {
+  delay(5000);
+
+  //read temperature and humidity
+  float t = dht.readTemperature();
+  float h = dht.readHumidity();
+  if (isnan(h) || isnan(t)) {
+    Serial.println("Failed to read from DHT sensor!");
+  }
+  // clear display
+  display.clearDisplay();
+  
+  // display temperature
+  display.setTextSize(1);
+  display.setCursor(0,0);
+  display.print("Temperature: ");
+  display.setTextSize(2);
+  display.setCursor(0,10);
+  display.print(t);
+  display.print(" ");
+  display.setTextSize(1);
+  display.cp437(true);
+  display.write(167);
+  display.setTextSize(2);
+  display.print("C");
+  
+  // display humidity
+  display.setTextSize(1);
+  display.setCursor(0, 35);
+  display.print("Humidity: ");
+  display.setTextSize(2);
+  display.setCursor(0, 45);
+  display.print(h);
+  display.print(" %"); 
+  
+  display.display(); 
+}
+
 ```
 
 **Hardware**
@@ -137,14 +203,23 @@ After successfully eradicating and approving the errors in the schematic, we mov
 Manufacturing the PCB 
 
 •	**Printing** - We printed the board view design on a laminated plastic A4 sheet with the bottom and top layers mirrored to each other on the ends of the sheet.
+
 •	**Cutting** - A board with copper plating is cut to the desired dimensions of the printout using a cutting machine for precision.
+
 •	**PCB Masking** - The printed laminated is placed on the board for UV exposure.
+
 •	**Uv exposure** - This board is placed under UV light for 2:30 minutes.
+
 •	**Developing**- The board is placed in a solution of sodium hydroxide
+
 •	**Etching**- The PCB is etched using iron chloride to get rid of the unprotected copper.
+
 •	**Cleaning**- The PCB is wiped with alcohol to remove unwanted residue.
+
 •	**Drilling** - After checking the connections between the tracks, we drilled holes for the THT components & the VIAS. It is used to connect the top & the bottom layer. The VIAS were punched down using a punching machine.
+
 •	**Placing & Soldering** - Lastly, after successfully drilling the holes, we moved to the final step of soldering & mounting. We tried to put the SMD paste as precisely as possible to avoid spreading over other pads. We used the Pick and place machine to mount the SMD components of the PCB. The board with the components was put in the oven for 20 minutes to stick the parts firmly. Finally, we soldered the THT components after the previous task. 
+
 After manufacturing the PCB, we realized that the connection from 10uF capacitor via voltage regulator to the power supply was incomplete. We tackled this problem by soldering a wire to complete the connection.
 
 The placement of the mini-USB port was such that the cable for recharging the battery could not fit in the port. So, we cut the board such that the cable fits inside the port.
