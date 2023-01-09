@@ -106,7 +106,7 @@ The RTS signal is for resetting the ESP and the DTR signal is to put the chip in
 •	**Voltage Regulator**
 AMS1117-3.3 is a cost-efficient, low dropout (LDO) Voltage Regulator designed to provide a current of up to 1 ampere. The output voltage can vary from 1.5V to 5V. It also has a low dropout voltage of 1.3V when operating at maximum current. The maximum input voltage it can support is 15V. This device is used to obtain a steady voltage of 3.3V from the power source.
 
-•	**Battery Management **
+•	**Battery Management**
 We use MCP73831 IC to charge the battery. It is an advanced linear charge management controller which is compact and budget friendly as well. It adopts a constant current/constant voltage circuit to prevent overcharging.
 
 
@@ -121,9 +121,9 @@ def function():
     print s
 ```)
 
-Hardware
+**Hardware**
 
-Design
+**Design**
 
 
 The design phase started as soon as the part list was ready. 
@@ -136,15 +136,15 @@ After successfully eradicating and approving the errors in the schematic, we mov
 
 Manufacturing the PCB 
 
-•	Printing - We printed the board view design on a laminated plastic A4 sheet with the bottom and top layers mirrored to each other on the ends of the sheet.
-•	Cutting - A board with copper plating is cut to the desired dimensions of the printout using a cutting machine for precision.
-•	PCB Masking - The printed laminated is placed on the board for UV exposure.
-•	Uv exposure - This board is placed under UV light for 2:30 minutes.
-•	Developing- The board is placed in a solution of sodium hydroxide
-•	Etching- The PCB is etched using iron chloride to get rid of the unprotected copper.
-•	Cleaning- The PCB is wiped with alcohol to remove unwanted residue.
-•	Drilling - After checking the connections between the tracks, we drilled holes for the THT components & the VIAS. It is used to connect the top & the bottom layer. The VIAS were punched down using a punching machine.
-•	Placing & Soldering - Lastly, after successfully drilling the holes, we moved to the final step of soldering & mounting. We tried to put the SMD paste as precisely as possible to avoid spreading over other pads. We used the Pick and place machine to mount the SMD components of the PCB. The board with the components was put in the oven for 20 minutes to stick the parts firmly. Finally, we soldered the THT components after the previous task. 
+•	**Printing** - We printed the board view design on a laminated plastic A4 sheet with the bottom and top layers mirrored to each other on the ends of the sheet.
+•	**Cutting** - A board with copper plating is cut to the desired dimensions of the printout using a cutting machine for precision.
+•	**PCB Masking** - The printed laminated is placed on the board for UV exposure.
+•	**Uv exposure** - This board is placed under UV light for 2:30 minutes.
+•	**Developing**- The board is placed in a solution of sodium hydroxide
+•	**Etching**- The PCB is etched using iron chloride to get rid of the unprotected copper.
+•	**Cleaning**- The PCB is wiped with alcohol to remove unwanted residue.
+•	**Drilling** - After checking the connections between the tracks, we drilled holes for the THT components & the VIAS. It is used to connect the top & the bottom layer. The VIAS were punched down using a punching machine.
+•	**Placing & Soldering** - Lastly, after successfully drilling the holes, we moved to the final step of soldering & mounting. We tried to put the SMD paste as precisely as possible to avoid spreading over other pads. We used the Pick and place machine to mount the SMD components of the PCB. The board with the components was put in the oven for 20 minutes to stick the parts firmly. Finally, we soldered the THT components after the previous task. 
 After manufacturing the PCB, we realized that the connection from 10uF capacitor via voltage regulator to the power supply was incomplete. We tackled this problem by soldering a wire to complete the connection.
 
 The placement of the mini-USB port was such that the cable for recharging the battery could not fit in the port. So, we cut the board such that the cable fits inside the port.
@@ -157,7 +157,7 @@ The Coding part has been attached below
 
 
 
-## 5	Results
+## 5 Results
 (Here you should present your results.
 This is an example how to include image:
 ![alt text](resources/Open_Source_Hardware_(OSHW)_Logo_on_blank_PCB.jpg "Example Image")
