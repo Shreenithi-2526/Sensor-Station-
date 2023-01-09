@@ -57,7 +57,7 @@ The project is built on a PCB using an ESP32-WROOM-32D chip, DHT22, an external 
 
 Example how to draw a table:
 
-| Component                   | Model no. |
+**| Component                   | Model no. |
 
 |FTDI module                  | FT232-AZ    |
 
@@ -68,21 +68,36 @@ Example how to draw a table:
 |Microcontroller	          | ESP32-WROOM-32D   |
  
 |Pushbutton (x4)              |     |
+
 |Resistor SMD (x3)10k	      | R1206W  |
+
 |Resistor SMD 2k	          | R1206W |
+
 |Resistor SMD 470	          | R1206W |
+
 |Capacitor SMD (x2) 10uF	  | C-EUC1206 |
+
 |Capacitor SMD (x2) 4.7uF	  | C-EUC1206 |
+
 |Temperature/Humidity sensor  |	RHT03_DHT-22_AM2302  |
+
 |6 Pin Female Headers (x2)    |   | 
+
 |Pushbutton (x4)              | FT232-AZ    |
+
 |4 Pin Female Header          |   |
+
 |LDO Voltage Regulators       | AZ1117CH-3.3TRG1 |
+
 |LED2	                      | LEDSMT1206 |
+
 |USBMINIB                     | USB BWM SMD   |
+
 |Battery Management Li-Ion    | MCP73831T-5ACI/OT  |
+
 |Battery Connector            | JST PH2P STS |
-|Battery 	                  | Li-Ion 3.7V 500mAh |
+
+|Battery 	                  | Li-Ion 3.7V 500mAh |**
 
 
 ## 2	Literature review
