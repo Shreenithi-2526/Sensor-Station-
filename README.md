@@ -30,7 +30,7 @@ Shreshth Khosla
 
 ## Abstract
 
-(Short summary of the project and the work conducted)
+
 
 The project aims to measure the surrounding weather conditions from the sensor and successfully transmit the data to the OLED display through a microcontroller.
 The board gets powered by a lithium battery which gives an output of 3.3V, safeguarded by a battery management system. We can recharge the battery using a mini USB which turns on an orange LED indicating a successful connection.
@@ -103,6 +103,8 @@ To understand how the PCB works, it is essential to be familiar with the working
 
 •	**ESP 32-WROOM-32D**
 This is the microcontroller used in our circuit. It is a powerful Wifi+Bluetooth MCU that can be used for a wide range of applications. The pin layout is provided below.
+
+![esp32](/uploads/bb3f3d8b9b005fd032b4fe52bb4442f7/esp32.png)![esp32](/uploads/0dc6af98d88081c88b31b50cce622f38/esp32.png)
 
 •	**DHT22 Sensor**
 We have used the DHT 22 sensor, made of a capacitive humidity sensor and a thermistor. It consists of a chip that does analog to digital conversion to display the temperature and humidity with the help of a microcontroller. It is ideal for displaying 0-100% humidity readings with 2-5% accuracy and -40 to 80°C temperature readings with ±0.5°C accuracy.
