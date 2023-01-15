@@ -341,5 +341,4 @@ As a next step to our project, this sensor station could be advanced to an IoT p
 * [8] https://controls.hsrw.org/dokuwiki/doku.php?id=ee:pcbfoametching
 * [9]	https://www.ourpcb.com/ftdi-pinout.html
 
-## 8	Appendices
 
