@@ -96,8 +96,6 @@ The project is built on a PCB using an ESP32-WROOM-32D chip, DHT22, an external 
 
 
 ## 2	Theory
-(If necessary please present theory in this section.
-This math is inline $`a^2+b^2=c^2`$.)
 
 To understand how the PCB works, it is essential to be familiar with the working of some individual components. Brief explanantion of the parts is provided below:
 
@@ -105,10 +103,13 @@ To understand how the PCB works, it is essential to be familiar with the working
 This is the microcontroller used in our circuit. It is a powerful Wifi+Bluetooth MCU that can be used for a wide range of applications. The pin layout is provided below.
 
 ![esp32](/uploads/bb3f3d8b9b005fd032b4fe52bb4442f7/esp32.png)
+
 •	**DHT22 Sensor**
 We have used the DHT 22 sensor, made of a capacitive humidity sensor and a thermistor. It consists of a chip that does analog to digital conversion to display the temperature and humidity with the help of a microcontroller. It is ideal for displaying 0-100% humidity readings with 2-5% accuracy and -40 to 80°C temperature readings with ±0.5°C accuracy.
 
 The pin layout of the sensor is :
+
+![dht22](/uploads/cbdbb57c04113534182dfb199ea16738/dht22.png)
 
 Vcc	- Power supply 3.5V to 5.5V
 Data -	Outputs both Temperature and Humidity through serial Data
@@ -120,6 +121,8 @@ Ground -	Connected to the ground of the circuit
 As the name indicates, it displays the measured data through I2C communication. It conducts electricity to organic materials which are sandwiched between the electrodes for light emission.
 
 The pins used of the OLED display are:
+
+![oled_disp](/uploads/bf2fee61a55862380b9d0c5607da6eea/oled_disp.png)
 
 SDA – Serial data pin for I2C interface
 SCL – Serial clock pin for I2C interface
@@ -134,6 +137,8 @@ The RTS signal is for resetting the ESP and the DTR signal is to put the chip in
 
 The pins used in the FTDI module is :
 
+![ftdi](/uploads/89c0aa2f4c8f0eb7f8faebd32138f1cb/ftdi.jpg)
+
 GND- Ground pin
 RX- Input data reception
 TX- Output data transmission
@@ -145,6 +150,8 @@ AMS1117-3.3 is a cost-efficient, low dropout (LDO) Voltage Regulator designed to
 
 The pin layout is as follows:
 
+![ams1117](/uploads/be43a8e23e1fde40d34e7475eb8186f3/ams1117.png)
+
 ADJ/GND- Ground pin
 Vout- Regulated output voltage
 Input- Input voltage that has to be regulated
@@ -154,6 +161,9 @@ Input- Input voltage that has to be regulated
 We use MCP73831 IC to charge the battery. It is an advanced linear charge management controller which is compact and budget friendly as well. It adopts a constant current/constant voltage circuit to prevent overcharging.
 
 The pins layout is :
+
+![mcp](/uploads/f56ff11ddfc7892fd9e12a65fa58ba92/mcp.jpg)
+
 Vdd- Battery management input supply
 Vbat- Battery charge control output
 STAT- Charge status output
@@ -247,7 +257,13 @@ Initially, we intended to use the ESP32 Developer kit. But, since it was not all
 
 We started with the schematic design on Autodesk Eagle. The process took a couple of revisions to finalize the circuit design as we had to search the libraries and manually add them to Eagle according to the component requirements. We also did the ERC check where we had to rectify errors in the schematic.
 
+![schematic](/uploads/45b500261c06f5855a9a75900e8b9d6a/schematic.png)
+
+![errors](/uploads/f0cf981883ba0f60d1172681d00f9c61/errors.png)
+
 After successfully eradicating and approving the errors in the schematic, we moved to the next task of building the board view using the schematic layout. While working with the board view, we spaced out the components far enough from each other to avoid congestion and ease the process while soldering. We also had to follow some steps/rules while designing the board view to manufacture the PCB in-house without any issues. We removed the DRC errors from the board view design.
+
+![Board_view](/uploads/9cfdafae5cdbaadb676aa1c8228328c8/Board_view.png)
 
 **Manufacturing the PCB** 
 
@@ -282,22 +298,17 @@ The Coding part has been attached below
 
 
 ## 4 Results
-(Here you should present your results.
-This is an example how to include image:
-![alt text](resources/Open_Source_Hardware_(OSHW)_Logo_on_blank_PCB.jpg "Example Image")
-(C) Altzone, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons)
-
 
 The outcome of the project should look like this. 
 
-
-
+![pcb](/uploads/dae24bb5611a4fb8932910090ed2fbd9/pcb.jpg)
 
 ## 5	Discussion
 
 
 The final result of the project should display the values of Temperature & Humidity from the surroundings onto the OLED panel.
 
+![prototyping](/uploads/6166dcb1c8e88a1338568cb5917e82a4/prototyping.jpg)
 
 ## 6	Concluding Comments
 
