@@ -1,6 +1,6 @@
 >>>
 
-# Sensor Station (Title of the project)
+# Sensor Station 
 
 by: 
 Shreenithi Madhavan, 28639
@@ -23,7 +23,8 @@ We would like to thank our Project Supervisors for guiding us through this proje
 Kleve, 
 09.01.2023
 
-Shreenithi Madhavan 
+Shreenithi Madhavan
+
 Shreshth Khosla 
 
 
@@ -46,18 +47,12 @@ The microcontroller chip is programmed using an FTDI module communicating throug
 A Weather Sensor station is an environmental monitoring device/gadget used to gather information regarding the current temperature, pressure & humidity. It plays a vital role in providing governments, businesses, and individuals with the data they need to stay prepared and respond appropriately during weather challenges. A sensor station can range from a simple household device dedicated to measuring the surroundings data to a complex gadget that measures the weather conditions & also predicts the numbers for the future. Hence, a sensor station is an indispensable device. 
 
 ### 1.1	Background
-(Necessary background to your work….
-Chapter 1 presents….. 
-Chapter 2 presents…..)
 
 After finalizing the project idea, the research about the components, sensors, and chips began. The aim while choosing the parts was to focus on the features, cost efficiency, and long-activity. 
 We also focused on buying THT parts, attached to the board using female headers, to repurpose in the future.
 
 The project is built on a PCB using an ESP32-WROOM-32D chip, DHT22, an external temperature & Humidity sensor, and an OLED to display the values gathered using the sensor. The idea can be leveled-up by providing the data directly to a Wifi/BlueTooth-enabled device as an application of IoT.    
 
-Example how to draw a table:
-
-**| Component                   | Model no. |**
 
 |FTDI module                  | FT232-AZ    |
 
@@ -100,10 +95,7 @@ Example how to draw a table:
 |Battery 	                  | Li-Ion 3.7V 500mAh |
 
 
-## 2	Literature review
-If you have conducted literature review, this would be the point to present other researchers work in that field.
-
-## 3	Theory
+## 2	Theory
 (If necessary please present theory in this section.
 This math is inline $`a^2+b^2=c^2`$.)
 
@@ -115,26 +107,62 @@ This is the microcontroller used in our circuit. It is a powerful Wifi+Bluetooth
 •	**DHT22 Sensor**
 We have used the DHT 22 sensor, made of a capacitive humidity sensor and a thermistor. It consists of a chip that does analog to digital conversion to display the temperature and humidity with the help of a microcontroller. It is ideal for displaying 0-100% humidity readings with 2-5% accuracy and -40 to 80°C temperature readings with ±0.5°C accuracy.
 
+The pin layout of the sensor is :
+
+Vcc	- Power supply 3.5V to 5.5V
+Data -	Outputs both Temperature and Humidity through serial Data
+NC -	No Connection and hence not used
+Ground -	Connected to the ground of the circuit
+
+
 •	**OLED Display**
 As the name indicates, it displays the measured data through I2C communication. It conducts electricity to organic materials which are sandwiched between the electrodes for light emission.
+
+The pins used of the OLED display are:
+
+SDA – Serial data pin for I2C interface
+SCL – Serial clock pin for I2C interface
+GND – Ground pin
+VCC – power supply for display
+
 
 •	**FTDI Module**
 The FTDI module uses an FTDI chip that converts the USB signal to a UART (Universal asynchronous receiver-transmitter) signal for our microcontroller to understand. It, therefore, aids in programming the ESP32-WROOM-32D chip using Arduino IDE.
 The programming process is automatic. It uses two switches, BC547 transistors, and other components.
-The RTS signal is for resetting the ESP and the DTR signal is to put the chip in flashing mode
+The RTS signal is for resetting the ESP and the DTR signal is to put the chip in flashing mode.
+
+The pins used in the FTDI module is :
+
+GND- Ground pin
+RX- Input data reception
+TX- Output data transmission
+Vcc- Input data reception
+
 
 •	**Voltage Regulator**
 AMS1117-3.3 is a cost-efficient, low dropout (LDO) Voltage Regulator designed to provide a current of up to 1 ampere. The output voltage can vary from 1.5V to 5V. It also has a low dropout voltage of 1.3V when operating at maximum current. The maximum input voltage it can support is 15V. This device is used to obtain a steady voltage of 3.3V from the power source.
 
+The pin layout is as follows:
+
+ADJ/GND- Ground pin
+Vout- Regulated output voltage
+Input- Input voltage that has to be regulated
+
+
 •	**Battery Management**
 We use MCP73831 IC to charge the battery. It is an advanced linear charge management controller which is compact and budget friendly as well. It adopts a constant current/constant voltage circuit to prevent overcharging.
 
+The pins layout is :
+Vdd- Battery management input supply
+Vbat- Battery charge control output
+STAT- Charge status output
+PROG- Current regulation set & charge control enable
 
-## 4	Methodology
-How was your approach to solve the given problem/task.
-This will include descriptions of the HW used as well as the SW.
-This is an example how to include code snippet:
-```#include <Wire.h>
+
+## 3	Methodology
+
+```
+#include <Wire.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
 #include <Adafruit_Sensor.h>
@@ -252,7 +280,7 @@ The Coding part has been attached below
 
 
 
-## 5 Results
+## 4 Results
 (Here you should present your results.
 This is an example how to include image:
 ![alt text](resources/Open_Source_Hardware_(OSHW)_Logo_on_blank_PCB.jpg "Example Image")
@@ -264,20 +292,19 @@ The outcome of the project should look like this.
 
 
 
-## 6	Discussion
-(Here you should discuss your results)
+## 5	Discussion
+
 
 The final result of the project should display the values of Temperature & Humidity from the surroundings onto the OLED panel.
 
 
-## 7	Concluding Comments
-(You might want to discuss possible future work here)
+## 6	Concluding Comments
 
 
 As a next step to our project, we could advance it to an IoT project. The values would be displayed directly to a device with Wifi/Bluetooth enabled by making changes to the code. We wish to make use of our board to the fullest. For the same reason, we have added six extra GPIOs for future growth.
 
 
-## 8	References
+## 7	References
 
 * [1] https://www.mischianti.org/2021/05/26/esp32-wroom-32-high-resolution-pinout-and-specs/
 * [2] https://learn.adafruit.com/dht
@@ -287,6 +314,7 @@ As a next step to our project, we could advance it to an IoT project. The values
 * [6] https://www.studiopieters.nl/esp32-program-a-esp32/
 * [7] https://randomnerdtutorials.com/esp32-dht11-dht22-temperature-humidity-sensor-arduino-ide/
 * [8] https://controls.hsrw.org/dokuwiki/doku.php?id=ee:pcbfoametching
+* [9]	https://www.ourpcb.com/ftdi-pinout.html
 
-## 9	Appendices
+## 8	Appendices
 
