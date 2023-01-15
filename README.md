@@ -112,8 +112,11 @@ The pin layout of the sensor is :
 ![dht22](/uploads/cbdbb57c04113534182dfb199ea16738/dht22.png)
 
 Vcc	- Power supply 3.5V to 5.5V
+
 Data -	Outputs both Temperature and Humidity through serial Data
+
 NC -	No Connection and hence not used
+
 Ground -	Connected to the ground of the circuit
 
 
@@ -125,8 +128,11 @@ The pins used of the OLED display are:
 ![oled_disp](/uploads/bf2fee61a55862380b9d0c5607da6eea/oled_disp.png)
 
 SDA – Serial data pin for I2C interface
+
 SCL – Serial clock pin for I2C interface
+
 GND – Ground pin
+
 VCC – power supply for display
 
 
@@ -140,8 +146,11 @@ The pins used in the FTDI module is :
 ![ftdi](/uploads/89c0aa2f4c8f0eb7f8faebd32138f1cb/ftdi.jpg)
 
 GND- Ground pin
+
 RX- Input data reception
+
 TX- Output data transmission
+
 Vcc- Input data reception
 
 
@@ -153,7 +162,9 @@ The pin layout is as follows:
 ![ams1117](/uploads/be43a8e23e1fde40d34e7475eb8186f3/ams1117.png)
 
 ADJ/GND- Ground pin
+
 Vout- Regulated output voltage
+
 Input- Input voltage that has to be regulated
 
 
@@ -165,12 +176,63 @@ The pins layout is :
 ![mcp](/uploads/f56ff11ddfc7892fd9e12a65fa58ba92/mcp.jpg)
 
 Vdd- Battery management input supply
+
 Vbat- Battery charge control output
+
 STAT- Charge status output
+
 PROG- Current regulation set & charge control enable
 
 
 ## 3	Methodology
+
+**Hardware**
+
+**Design**
+
+
+The design phase started as soon as the part list was ready. 
+
+Initially, we intended to use the ESP32 Developer kit. But, since it was not allowed, we decided to use the raw chip. We researched to find a suitable method for programming. Accordingly, we designed our circuit and decided to use an FTDI module for programming the chip on Arduino IDE.
+
+We started with the schematic design on Autodesk Eagle. The process took a couple of revisions to finalize the circuit design as we had to search the libraries and manually add them to Eagle according to the component requirements. We also did the ERC check where we had to rectify errors in the schematic.
+
+![schematic](/uploads/45b500261c06f5855a9a75900e8b9d6a/schematic.png)
+
+![errors](/uploads/f0cf981883ba0f60d1172681d00f9c61/errors.png)
+
+After successfully eradicating and approving the errors in the schematic, we moved to the next task of building the board view using the schematic layout. While working with the board view, we spaced out the components far enough from each other to avoid congestion and ease the process while soldering. We also had to follow some steps/rules while designing the board view to manufacture the PCB in-house without any issues. We removed the DRC errors from the board view design.
+
+![Board_view](/uploads/9cfdafae5cdbaadb676aa1c8228328c8/Board_view.png)
+
+**Manufacturing the PCB** 
+
+•	**Printing** - We printed the board view design on a laminated plastic A4 sheet with the bottom and top layers mirrored to each other on the ends of the sheet.
+
+•	**Cutting** - A board with copper plating is cut to the desired dimensions of the printout using a cutting machine for precision.
+
+•	**PCB Masking** - The printed laminated is placed on the board for UV exposure.
+
+•	**Uv exposure** - This board is placed under UV light for 2:30 minutes.
+
+•	**Developing**- The board is placed in a solution of sodium hydroxide
+
+•	**Etching**- The PCB is etched using iron chloride to get rid of the unprotected copper.
+
+•	**Cleaning**- The PCB is wiped with alcohol to remove unwanted residue.
+
+•	**Drilling** - After checking the connections between the tracks, we drilled holes for the THT components & the VIAS. It is used to connect the top & the bottom layer. The VIAS were punched down using a punching machine.
+
+•	**Placing & Soldering** - Lastly, after successfully drilling the holes, we moved to the final step of soldering & mounting. We tried to put the SMD paste as precisely as possible to avoid spreading over other pads. We used the Pick and place machine to mount the SMD components of the PCB. The board with the components was put in the oven for 20 minutes to stick the parts firmly. Finally, we soldered the THT components after the previous task. 
+
+After manufacturing the PCB, we realized that the connection from 10uF capacitor via voltage regulator to the power supply was incomplete. We tackled this problem by soldering a wire to complete the connection.
+
+The placement of the mini-USB port was such that the cable for recharging the battery could not fit in the port. So, we cut the board such that the cable fits inside the port.
+
+
+**Software**
+
+The Coding part has been attached below
 
 ```
 #include <Wire.h>
@@ -246,74 +308,25 @@ void loop() {
 
 ```
 
-**Hardware**
-
-**Design**
-
-
-The design phase started as soon as the part list was ready. 
-
-Initially, we intended to use the ESP32 Developer kit. But, since it was not allowed, we decided to use the raw chip. We researched to find a suitable method for programming. Accordingly, we designed our circuit and decided to use an FTDI module for programming the chip on Arduino IDE.
-
-We started with the schematic design on Autodesk Eagle. The process took a couple of revisions to finalize the circuit design as we had to search the libraries and manually add them to Eagle according to the component requirements. We also did the ERC check where we had to rectify errors in the schematic.
-
-![schematic](/uploads/45b500261c06f5855a9a75900e8b9d6a/schematic.png)
-
-![errors](/uploads/f0cf981883ba0f60d1172681d00f9c61/errors.png)
-
-After successfully eradicating and approving the errors in the schematic, we moved to the next task of building the board view using the schematic layout. While working with the board view, we spaced out the components far enough from each other to avoid congestion and ease the process while soldering. We also had to follow some steps/rules while designing the board view to manufacture the PCB in-house without any issues. We removed the DRC errors from the board view design.
-
-![Board_view](/uploads/9cfdafae5cdbaadb676aa1c8228328c8/Board_view.png)
-
-**Manufacturing the PCB** 
-
-•	**Printing** - We printed the board view design on a laminated plastic A4 sheet with the bottom and top layers mirrored to each other on the ends of the sheet.
-
-•	**Cutting** - A board with copper plating is cut to the desired dimensions of the printout using a cutting machine for precision.
-
-•	**PCB Masking** - The printed laminated is placed on the board for UV exposure.
-
-•	**Uv exposure** - This board is placed under UV light for 2:30 minutes.
-
-•	**Developing**- The board is placed in a solution of sodium hydroxide
-
-•	**Etching**- The PCB is etched using iron chloride to get rid of the unprotected copper.
-
-•	**Cleaning**- The PCB is wiped with alcohol to remove unwanted residue.
-
-•	**Drilling** - After checking the connections between the tracks, we drilled holes for the THT components & the VIAS. It is used to connect the top & the bottom layer. The VIAS were punched down using a punching machine.
-
-•	**Placing & Soldering** - Lastly, after successfully drilling the holes, we moved to the final step of soldering & mounting. We tried to put the SMD paste as precisely as possible to avoid spreading over other pads. We used the Pick and place machine to mount the SMD components of the PCB. The board with the components was put in the oven for 20 minutes to stick the parts firmly. Finally, we soldered the THT components after the previous task. 
-
-After manufacturing the PCB, we realized that the connection from 10uF capacitor via voltage regulator to the power supply was incomplete. We tackled this problem by soldering a wire to complete the connection.
-
-The placement of the mini-USB port was such that the cable for recharging the battery could not fit in the port. So, we cut the board such that the cable fits inside the port.
-
-
-**Software**
-
-The Coding part has been attached below
-
-
-
 
 ## 4 Results
 
-The outcome of the project should look like this. 
+The outcome of the printed circuit board should look like this. 
 
 ![pcb](/uploads/dae24bb5611a4fb8932910090ed2fbd9/pcb.jpg)
 
 ## 5	Discussion
 
-
-The final result of the project should display the values of Temperature & Humidity from the surroundings onto the OLED panel.
+ After uploading the code to the microcontroller, the DHT 22 sensor measures the data (Temperature and humidity) from the surroundings and displays it on the OLED panel.
+ 
+ Attached below is a picture of the prototyping of the sensor station.
 
 ![prototyping](/uploads/6166dcb1c8e88a1338568cb5917e82a4/prototyping.jpg)
 
 ## 6	Concluding Comments
 
 
-As a next step to our project, we could advance it to an IoT project. The values would be displayed directly to a device with Wifi/Bluetooth enabled by making changes to the code. We wish to make use of our board to the fullest. For the same reason, we have added six extra GPIOs for future growth.
+As a next step to our project, this sensor station could be advanced to an IoT project. The values would be displayed directly to a device with Wifi/Bluetooth enabled by programming the code accordingly. We wish to make use of our board to the fullest. For the same reason, we have added six extra GPIOs for future expansion.
 
 
 ## 7	References
