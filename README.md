@@ -38,9 +38,19 @@ The microcontroller chip is programmed using an FTDI module communicating throug
 
 
 
-## Table of Contents
+# Table of contents
 
-[[_TOC_]]
+1. [Ackowledgement](#Introduction)
+2. [Abstract](#Background)
+3. [Table of Contents](#Background)
+4. [Introduction](#Background)
+   1.[Background](##Subparagraph)
+5. [Theory](#Background)
+6. [Methodology](#Background)
+7. [Results](#Background)
+8. [Discussion](#Background)
+9. [Concluding Comments](#Background)
+10. [References](#Background)
 
 ## 1 Introduction
 
@@ -54,45 +64,28 @@ We also focused on buying THT parts, attached to the board using female headers,
 The project is built on a PCB using an ESP32-WROOM-32D chip, DHT22, an external temperature & Humidity sensor, and an OLED to display the values gathered using the sensor. The idea can be leveled-up by providing the data directly to a Wifi/BlueTooth-enabled device as an application of IoT.    
 
 
-|FTDI module                  | FT232-AZ    |
-
-|OLED panel                   | 0.96", OLED Display, SSD1306  |
-
-|Temperature/Humidity sensor  |	RHT03_DHT-22_AM2302  |
-
-|Microcontroller	          | ESP32-WROOM-32D   |
- 
-|Pushbutton (x4)              |     |
-
-|Resistor SMD (x3)10k	      | R1206W  |
-
-|Resistor SMD 2k	          | R1206W |
-
-|Resistor SMD 470	          | R1206W |
-
-|Capacitor SMD (x2) 10uF	  | C-EUC1206 |
-
-|Capacitor SMD (x2) 4.7uF	  | C-EUC1206 |
-
-|Temperature/Humidity sensor  |	RHT03_DHT-22_AM2302  |
-
-|6 Pin Female Headers (x2)    |   | 
-
-|Pushbutton (x4)              | FT232-AZ    |
-
-|4 Pin Female Header          |   |
-
-|LDO Voltage Regulators       | AZ1117CH-3.3TRG1 |
-
-|LED2	                      | LEDSMT1206 |
-
-|USBMINIB                     | USB BWM SMD   |
-
-|Battery Management Li-Ion    | MCP73831T-5ACI/OT  |
-
-|Battery Connector            | JST PH2P STS |
-
-|Battery 	                  | Li-Ion 3.7V 500mAh |
+| Component                 | Specification   |
+|------------------------------|------------------------------|
+| FTDI module                  | FT232-AZ    |
+| OLED panel                   | 0.96", OLED Display, SSD1306  |
+| Temperature/Humidity sensor  |	RHT03_DHT-22_AM2302  |
+| Microcontroller	          | ESP32-WROOM-32D   |
+| Pushbutton (x4)              |     |
+| Resistor SMD (x3)10k	      | R1206W  |
+| Resistor SMD 2k	          | R1206W |
+| Resistor SMD 470	          | R1206W |
+| Capacitor SMD (x2) 10uF	  | C-EUC1206 |
+| Capacitor SMD (x2) 4.7uF	  | C-EUC1206 |
+| Temperature/Humidity sensor  |	RHT03_DHT-22_AM2302  |
+| 6 Pin Female Headers (x2)    |  - | 
+| Pushbutton (x4)              | FT232-AZ    |
+| 4 Pin Female Header          | -  |
+| LDO Voltage Regulators       | AZ1117CH-3.3TRG1 |
+| LED2	                      | LEDSMT1206 |
+| USBMINIB                     | USB BWM SMD   |
+| Battery Management Li-Ion    | MCP73831T-5ACI/OT  |
+| Battery Connector            | JST PH2P STS |
+| Battery 	                  | Li-Ion 3.7V 500mAh |
 
 
 ## 2	Theory
