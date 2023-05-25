@@ -38,25 +38,25 @@ The microcontroller chip is programmed using an FTDI module communicating throug
 
 
 
-# Table of contents
+## Table of contents
 
-1. [Ackowledgement](#Introduction)
-2. [Abstract](#Background)
-3. [Table of Contents](#Background)
-4. [Introduction](#Background)
-   1.[Background](##Subparagraph)
-5. [Theory](#Background)
-6. [Methodology](#Background)
-7. [Results](#Background)
-8. [Discussion](#Background)
-9. [Concluding Comments](#Background)
-10. [References](#Background)
+1. [Acknowledgement](#introduction)
+2. [Abstract](#abstract)
+3. [Table of Contents](#introduction)
+4. [Introduction](#introduction)\
+   4.1 [Background](#background)
+8. [Theory](#introduction)
+9. [Methodology](#introduction)
+10. [Results](#introduction)
+11. [Discussion](#introduction)
+12. [Concluding Comments](#introduction)
+13. [References](#introduction)
 
-## 1 Introduction
+## Introduction
 
 A Weather Sensor station is an environmental monitoring device/gadget used to gather information regarding the current temperature, pressure & humidity. It plays a vital role in providing governments, businesses, and individuals with the data they need to stay prepared and respond appropriately during weather challenges. A sensor station can range from a simple household device dedicated to measuring the surroundings data to a complex gadget that measures the weather conditions & also predicts the numbers for the future. Hence, a sensor station is an indispensable device. 
 
-### 1.1	Background
+###	Background
 
 After finalizing the project idea, the research about the components, sensors, and chips began. The aim while choosing the parts was to focus on the features, cost efficiency, and long-activity. 
 We also focused on buying THT parts, attached to the board using female headers, to repurpose in the future.
@@ -88,14 +88,14 @@ The project is built on a PCB using an ESP32-WROOM-32D chip, DHT22, an external 
 | Battery 	                  | Li-Ion 3.7V 500mAh |
 
 
-## 2	Theory
+##	Theory
 
 To understand how the PCB works, it is essential to be familiar with the working of some individual components. Brief explanantion of the parts is provided below:
 
 •	**ESP 32-WROOM-32D**
 This is the microcontroller used in our circuit. It is a powerful Wifi+Bluetooth MCU that can be used for a wide range of applications. The pin layout is provided below.
 
-![esp32](esp32.png)
+<img src="esp32.png" alt= “” width="50%" height="50%">
 
 •	**DHT22 Sensor**
 We have used the DHT 22 sensor, made of a capacitive humidity sensor and a thermistor. It consists of a chip that does analog to digital conversion to display the temperature and humidity with the help of a microcontroller. It is ideal for displaying 0-100% humidity readings with 2-5% accuracy and -40 to 80°C temperature readings with ±0.5°C accuracy.
@@ -118,7 +118,7 @@ As the name indicates, it displays the measured data through I2C communication. 
 
 The pins used of the OLED display are:
 
-![OLED](oled.png)
+<img src="oled.png" alt= “” width="50%" height="50%">
 
 SDA – Serial data pin for I2C interface
 
@@ -177,7 +177,7 @@ STAT- Charge status output
 PROG- Current regulation set & charge control enable
 
 
-## 3	Methodology
+##  Methodology
 
 **Hardware**
 
@@ -302,13 +302,13 @@ void loop() {
 ```
 
 
-## 4 Results
+## Results
 
 The outcome of the printed circuit board should look like this. 
 
-![pcb](PCB.jpg)
+<img src="PCB.jpg" alt= “” width="50%" height="50%">
 
-## 5	Discussion
+##	Discussion
 
  After uploading the code to the microcontroller, the DHT 22 sensor measures the data (Temperature and humidity) from the surroundings and displays it on the OLED panel.
  
@@ -316,13 +316,13 @@ The outcome of the printed circuit board should look like this.
 
 ![prototyping](Prototype.jpg)
 
-## 6	Concluding Comments
+##	Concluding Comments
 
 
 As a next step to our project, this sensor station could be advanced to an IoT project. The values would be displayed directly to a device with Wifi/Bluetooth enabled by programming the code accordingly. We wish to make use of our board to the fullest. For the same reason, we have added six extra GPIOs for future expansion.
 
 
-## 7	References
+##	References
 
 * [1] https://www.mischianti.org/2021/05/26/esp32-wroom-32-high-resolution-pinout-and-specs/
 * [2] https://learn.adafruit.com/dht
